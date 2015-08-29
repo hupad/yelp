@@ -13,6 +13,7 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'carrierwave'
 gem 'fog'
 gem "figaro"
+gem "mini_magick"
 
 group :development, :test do
   gem 'byebug'
