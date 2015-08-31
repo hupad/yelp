@@ -8,9 +8,9 @@
 
     <p>
       <strong>Address:</strong>
-      <%= @restaurant.address %>
-    </p>
-
+		<%= @restaurant.address %></p>
+		<div class="star-rating" data-score= <%= @avg_rating %> ></div> 
+		<p><%= "#{@reviews.length} reviews" %></p>
     <p>
       <strong>Phone:</strong>
       <%= @restaurant.phone %>
@@ -25,16 +25,18 @@
   </div>
    
   <div class="col-md-9">
-    <% if @reviews.blank? %>
-      <h3>No reviews yet. Be the first to write one!</h3>
-    <% else %>
-      <% @reviews.each do |review| %>
-        <div class="star-rating" data-score= <%= review.rating %>>
-        		
-        </div>
-        <p><%= review.comment %></p>
-      <% end %>
-    <% end %>
+   <table class="table">
+	  <tbody>
+	    <% @reviews.each do |review| %>
+	      <tr>
+	        <td>
+	          <div class="star-rating" data-score= <%= review.rating %> ></div>
+	          <p><%= review.comment %></p>
+	        </td>
+	      </tr>
+	    <% end %>
+	  </tbody>
+	</table>
   </div>
 </div>
 
